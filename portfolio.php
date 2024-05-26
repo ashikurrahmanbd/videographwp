@@ -1,7 +1,12 @@
-<?php get_header(); ?>
+<?php
+    get_header();
+    /*
+    Template Name: Portfolio
+    */
+?>
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -36,7 +41,7 @@
             <div class="row portfolio__gallery">
                 <div class="col-lg-4 col-md-6 col-sm-6 mix branding">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-1.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -51,7 +56,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix digital-marketing">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-2.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-2.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -63,7 +68,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix web">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-3.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-3.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -78,7 +83,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix photography">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-4.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-4.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -93,7 +98,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix ecommerce">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-5.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-5.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -105,7 +110,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix branding">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-6.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-6.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -120,7 +125,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix web">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-7.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-7.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -135,7 +140,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix photography">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-8.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-8.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>
@@ -147,7 +152,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix ecommerce">
                     <div class="portfolio__item">
-                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-9.jpg">
+                        <div class="portfolio__item__video set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/portfolio/portfolio-9.jpg">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                                     class="fa fa-play"></i></a>
                         </div>

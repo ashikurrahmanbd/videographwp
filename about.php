@@ -1,7 +1,12 @@
-<?php get_header(); ?>
+<?php 
+    get_header(); 
+    /*
+    Template Name: About
+    */
+?>
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -27,15 +32,15 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="about__pic__item about__pic__item--large set-bg"
-                                    data-setbg="img/about/about-1.jpg"></div>
+                                    data-setbg="<?php echo get_template_directory_uri(); ?>/img/about/about-1.jpg"></div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-2.jpg"></div>
+                                        <div class="about__pic__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/about/about-2.jpg"></div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-3.jpg"></div>
+                                        <div class="about__pic__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/about/about-3.jpg"></div>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +57,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="services__item">
                                     <div class="services__item__icon">
-                                        <img src="img/icons/si-3.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/icons/si-3.png" alt="">
                                     </div>
                                     <h4>Video distribution</h4>
                                     <p>Whether you’re halfway through the editing process, or you.</p>
@@ -61,7 +66,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="services__item">
                                     <div class="services__item__icon">
-                                        <img src="img/icons/si-4.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/icons/si-4.png" alt="">
                                     </div>
                                     <h4>Video hosting</h4>
                                     <p>Whether you’re halfway through the editing process, or you.</p>
@@ -81,7 +86,7 @@
     <!-- About Section End -->
 
     <!-- Testimonial Section Begin -->
-    <section class="testimonial spad set-bg" data-setbg="img/testimonial-bg.jpg">
+    <section class="testimonial spad set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/testimonial-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -101,7 +106,7 @@
                             </div>
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
-                                    <img src="img/testimonial/ta-1.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/ta-1.jpg" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
                                     <h5>Krista Attorn</h5>
@@ -118,7 +123,7 @@
                             </div>
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
-                                    <img src="img/testimonial/ta-2.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/ta-2.jpg" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
                                     <h5>Krista Attorn</h5>
@@ -135,7 +140,7 @@
                             </div>
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
-                                    <img src="img/testimonial/ta-3.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/ta-3.jpg" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
                                     <h5>Krista Attorn</h5>
@@ -152,7 +157,7 @@
                             </div>
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
-                                    <img src="img/testimonial/ta-1.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/ta-1.jpg" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
                                     <h5>Krista Attorn</h5>
@@ -169,7 +174,7 @@
                             </div>
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
-                                    <img src="img/testimonial/ta-2.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/testimonial/ta-2.jpg" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
                                     <h5>Krista Attorn</h5>
@@ -192,7 +197,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="counter__item">
                             <div class="counter__item__text">
-                                <img src="img/icons/ci-1.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-1.png" alt="">
                                 <h2 class="counter_num">230</h2>
                                 <p>Compled Projects</p>
                             </div>
@@ -201,7 +206,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="counter__item second__item">
                             <div class="counter__item__text">
-                                <img src="img/icons/ci-2.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-2.png" alt="">
                                 <h2 class="counter_num">1068</h2>
                                 <p>Happy clients</p>
                             </div>
@@ -210,7 +215,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="counter__item third__item">
                             <div class="counter__item__text">
-                                <img src="img/icons/ci-3.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-3.png" alt="">
                                 <h2 class="counter_num">230</h2>
                                 <p>Perspective clients</p>
                             </div>
@@ -219,7 +224,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="counter__item four__item">
                             <div class="counter__item__text">
-                                <img src="img/icons/ci-4.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-4.png" alt="">
                                 <h2 class="counter_num">230</h2>
                                 <p>Compled Projects</p>
                             </div>
@@ -232,7 +237,7 @@
     <!-- Counter Section End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad set-bg" data-setbg="img/team-bg.jpg">
+    <section class="team spad set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -244,7 +249,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
+                    <div class="team__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-1.jpg">
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>
@@ -258,7 +263,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--second set-bg" data-setbg="img/team/team-2.jpg">
+                    <div class="team__item team__item--second set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-2.jpg">
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>
@@ -272,7 +277,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--third set-bg" data-setbg="img/team/team-3.jpg">
+                    <div class="team__item team__item--third set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-3.jpg">
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>
@@ -286,7 +291,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--four set-bg" data-setbg="img/team/team-4.jpg">
+                    <div class="team__item team__item--four set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-4.jpg">
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>

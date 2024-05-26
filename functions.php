@@ -2,6 +2,7 @@
 /* Common Features */
 function vgraph_common_features(){
     add_theme_support( 'title-tag' );
+    add_theme_support('site-icon');
     add_theme_support('custom-logo', array(
         'height'        => 100,
         'width'         => 300,
@@ -15,6 +16,10 @@ function vgraph_common_features(){
     add_theme_support('widgets');
     add_theme_support( 'wp-block-styles' );
     remove_theme_support( 'widgets-block-editor' );
+
+    // disabling guttenberg editor
+    add_filter('use_block_editor_for_post', '__return_false', 10);
+    add_filter('use_block_editor_for_post_type', '__return_false', 10);
 
     // register nav menu
     register_nav_menus(array(

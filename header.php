@@ -3,8 +3,6 @@
 
 <head>
     <meta charset="<?php bloginfo( 'charset' ) ?>">
-    <meta name="description" content="Videograph Template">
-    <meta name="keywords" content="Videograph, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Videograph | Template</title>
@@ -16,7 +14,7 @@
 
     <!-- Css Styles -->
     <!-- all the style sheed has been registered on functions.php -->
-
+  
 
     <?php wp_head(); ?>
 </head>
