@@ -18,8 +18,54 @@ function vgraph_common_features(){
 
     // register nav menu
     register_nav_menus(array(
-        'primary-menu'  => __('Primary Menu', 'vgraphtd')
+        'primary-menu'  => __('Primary Menu', 'vgraphtd'),
+        'footer-menu-one'   => __('Footer Menu One', 'vgraphatd'),
+        'footer-menu-two'   => __('Footer Menu Two', 'vgraphtd')    
     ));
+
+    // register Sidebar for footer widget 1
+    register_sidebar( array(
+        'name'      => 'Footer Widget One',
+        'description'   => 'Add Footer widget one Element',
+        'id'        => 'footer-widget-one',
+        'before_widget' => '<div class="footer__option__item">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5>',
+        'after_title'   => '</h5>'
+    ) );
+
+    // register Sidebar for footer widget 2
+    register_sidebar( array(
+        'name'      => 'Footer Widget Two',
+        'description'   => 'Add Footer widget two Element',
+        'id'        => 'footer-widget-two',
+        'before_widget' => '<div class="footer__option__item">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5>',
+        'after_title'   => '</h5>'
+    ) );
+    // register Sidebar for footer widget 3
+    register_sidebar( array(
+        'name'      => 'Footer Widget Three',
+        'description'   => 'Add Footer widget three Element',
+        'id'        => 'footer-widget-three',
+        'before_widget' => '<div class="footer__option__item">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5>',
+        'after_title'   => '</h5>'
+    ) );
+
+    // register Sidebar for footer widget 4
+    register_sidebar( array(
+        'name'      => 'Footer Widget four',
+        'description'   => 'Add Footer widget four Element',
+        'id'        => 'footer-widget-four',
+        'before_widget' => '<div class="footer__option__item">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5>',
+        'after_title'   => '</h5>'
+    ) );
+
 
 }
 add_action( 'after_setup_theme', 'vgraph_common_features' );

@@ -6,61 +6,58 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt=""></a>
+                            <?php 
+                                $footer_logo = get_theme_mod('flogo', get_template_directory_uri().'/img/logo.png');
+                                
+                            ?>
+                            <?php if(!empty($footer_logo)): ?>
+                                <a href="<?php home_url(); ?>"><img src="<?php echo $footer_logo; ?>" alt=""></a>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <?php 
+                            
+                                $fb_link = get_theme_mod('fb_social_links', 'https://facebook.com');
+                                $twitter_link = get_theme_mod('twitter_social_links', 'https://twitter.com');
+                                $dribble_link = get_theme_mod('dribbble_social_links', 'https://dribbble.com');
+                                $instagram_link = get_theme_mod('instagram_social_links', 'https://instagram.com');
+                                $youtube_link = get_theme_mod('youtube_social_links', 'https://youtube.com');
+                               
+                            ?>
+                            <a href="<?php if(!empty($fb_link)){ echo esc_url($fb_link); } ?>"><i class="fa fa-facebook"></i></a>
+                            <a href="<?php if(!empty($twitter_link)){ echo esc_url($twitter_link); } ?>"><i class="fa fa-twitter"></i></a>
+                            <a href="<?php if(!empty($dribble_link)){ echo esc_url($dribble_link); } ?>"><i class="fa fa-dribbble"></i></a>
+                            <a href="<?php if(!empty($instagram_link)){ echo esc_url($instagram_link); } ?>"><i class="fa fa-instagram"></i></a>
+                            <a href="<?php if(!empty($youtube_link)){ echo esc_url($youtube_link); } ?>"><i class="fa fa-youtube-play"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer__option">
                 <div class="row">
+
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="footer__option__item">
-                            <h5>About us</h5>
-                            <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
-                                production company specializing.</p>
-                            <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
-                        </div>
+                        
+                        <?php dynamic_sidebar( 'footer-widget-one' ); ?>
+
                     </div>
+
                     <div class="col-lg-2 col-md-3 col-sm-3">
-                        <div class="footer__option__item">
-                            <h5>Who we are</h5>
-                            <ul>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Carrers</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Locations</a></li>
-                            </ul>
-                        </div>
+
+                        <?php dynamic_sidebar( 'footer-widget-two' ); ?>
+
                     </div>
+
                     <div class="col-lg-2 col-md-3 col-sm-3">
-                        <div class="footer__option__item">
-                            <h5>Our work</h5>
-                            <ul>
-                                <li><a href="#">Feature</a></li>
-                                <li><a href="#">Latest</a></li>
-                                <li><a href="#">Browse Archive</a></li>
-                                <li><a href="#">Video for web</a></li>
-                            </ul>
-                        </div>
+                       
+                        <?php dynamic_sidebar( 'footer-widget-three' ); ?>
+
                     </div>
+
                     <div class="col-lg-4 col-md-12">
-                        <div class="footer__option__item">
-                            <h5>Newsletter</h5>
-                            <p>Videoprah is an award-winning, full-service production company specializing.</p>
-                            <form action="#">
-                                <input type="text" placeholder="Email">
-                                <button type="submit"><i class="fa fa-send"></i></button>
-                            </form>
-                        </div>
+                        <?php dynamic_sidebar( 'footer-widget-four' ); ?>
                     </div>
                 </div>
             </div>
@@ -68,13 +65,12 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p class="footer__copyright__text">Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p>
+                        <?php
+                            $footer_copyright_text = get_theme_mod('footer_copyright_text_field_setting', 'Copyright 2024 | All Rights Reserved');
+                        ?>
+                        <?php if(!empty($footer_copyright_text)): ?>
+                        <p class="footer__copyright__text"><?php echo esc_textarea( $footer_copyright_text ); ?></p>
+                        <?php endif; ?>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
