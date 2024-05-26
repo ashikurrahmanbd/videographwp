@@ -84,14 +84,7 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.3.1.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.magnific-popup.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/mixitup.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/masonry.pkgd.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.slicknav.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+    <!-- All js files has been registered on the functions.php -->
 
     <?php wp_footer(); ?>
 </body>
