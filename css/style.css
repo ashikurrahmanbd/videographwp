@@ -1,10 +1,10 @@
 /******************************************************************
-  Template Name: Dreams
-  Description: Dreams wedding template
-  Author: Colorib
-  Author URI: https://colorlib.com/
+  Template Name: VideoGraph
+  Description: Video Vlogger portfolio template
+  Author: Ashikur Rahman
+  Author URI: https://pixelese.com/ashikur-rahman
   Version: 1.0
-  Created: Colorib
+  Created: Ashikur Rahman
 ******************************************************************/
 /*------------------------------------------------------------------
 [Table of contents]
@@ -325,7 +325,7 @@ ol {
   margin-right: 45px;
   position: relative;
 }
-.header__nav__menu ul li.active a:after {
+.header__nav__menu ul li.current-menu-item a:after {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);

@@ -48,29 +48,30 @@
                 </div>
                 <div class="col-lg-10">
                     <div class="header__nav__option">
-                        <nav class="header__nav__menu mobile-menu">
-                            <ul>
-                                <li class="active"><a href="./index.php">Home</a></li>
-                                <li><a href="./about.php">About</a></li>
-                                <li><a href="./portfolio.php">Portfolio</a></li>
-                                <li><a href="./services.php">Services</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="./about.php">About</a></li>
-                                        <li><a href="./portfolio.php">Portfolio</a></li>
-                                        <li><a href="./blog.php">Blog</a></li>
-                                        <li><a href="./blog-details.php">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="./contact.php">Contact</a></li>
-                            </ul>
-                        </nav>
+    
+                        <?php
+                            wp_nav_menu(array(
+                                'theme_location' => 'primary-menu',
+                                'container' => 'nav',
+                                'container_class' => 'header__nav__menu mobile-menu',
+                                'walker'    => new vgraph_nav_walker(),
+                            ));
+                        ?>
+
                         <div class="header__nav__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <?php 
+                                $fb_link = get_theme_mod('fb_social_links', 'https://facebook.com');
+                                $twitter_link = get_theme_mod('twitter_social_links', 'https://twitter.com');
+                                $dribble_link = get_theme_mod('dribbble_social_links', 'https://dribbble.com');
+                                $instagram_link = get_theme_mod('instagram_social_links', 'https://instagram.com');
+                                $youtube_link = get_theme_mod('youtube_social_links', 'https://youtube.com');
+                               
+                            ?>
+                            <a href="<?php if(!empty($fb_link)){ echo esc_url($fb_link); } ?>"><i class="fa fa-facebook"></i></a>
+                            <a href="<?php if(!empty($twitter_link)){ echo esc_url($twitter_link); } ?>"><i class="fa fa-twitter"></i></a>
+                            <a href="<?php if(!empty($dribbble_link)){ echo esc_url($dribbble_link); } ?>"><i class="fa fa-dribbble"></i></a>
+                            <a href="<?php if(!empty($instagram_link)){ echo esc_url($instagram_link); } ?>"><i class="fa fa-instagram"></i></a>
+                            <a href="<?php if(!empty($youtube_link)){ echo esc_url($youtube_link); } ?>"><i class="fa fa-youtube-play"></i></a>
                         </div>
                     </div>
                 </div>

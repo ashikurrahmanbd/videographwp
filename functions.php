@@ -50,3 +50,7 @@ function vgraph_theme_style_n_script(){
 }
 add_action('wp_enqueue_scripts', 'vgraph_theme_style_n_script');
 
+// Include files
+include_once get_template_directory().'/inc/vgraph-nav-walker.php';
+include_once get_template_directory().'/inc/vgraph-customizer-api.php';
+
