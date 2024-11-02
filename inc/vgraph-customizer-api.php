@@ -10,7 +10,7 @@ function vgraph_customizer_api($wp_customize){
     $wp_customize->add_panel('header_panel', array(
         'title'         => __('Header Options', 'vgraphtd'),
         'description'   =>  __('Header Customization options', 'vgraphtd'),
-        'priority'      => 10
+        'priority'      => 21
 
     ));
 
@@ -206,6 +206,34 @@ function vgraph_customizer_api($wp_customize){
     ));
 
 
+    // New Panel for customizing Pages
+    $wp_customize->add_panel('vg_customize_pages_panel', array(
+        'title' => __('Customize Pages', 'vgraphtd'),
+        'description'   => __('All Pages Customization Options'),
+        'priority'      => 22
+    ));
+
+    $wp_customize->add_section('vg_cp_home', array(
+        'title'     => __('Home', 'vgraphtd'),
+        'description'   => 'Customize Home Page',
+        'priority'  => 1,
+        'panel'         => 'vg_customize_pages_panel'
+    ));
+
+    $wp_customize->add_setting('cp_home_slider',  array(
+        'default'   => 'default text',
+        'transport' => 'refresh'
+    ));
+
+    $wp_customize->add_control('cp_home_slider', array(
+        'label'         => __('Slider 1 Text', 'vgraphtd'),
+        'description'   => __('Update your slider 1 text from here', 'vgraph'),
+        'type'          => 'textarea',
+        'section'      => 'vg_cp_home',
+    ));
+
+
+    
 
     
 

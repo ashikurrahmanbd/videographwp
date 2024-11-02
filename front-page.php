@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/hero/hero-1.jpg">
+            <div class="hero__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/hero/hero2.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/hero/hero-1.jpg">
+            <div class="hero__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/hero/hero3.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
