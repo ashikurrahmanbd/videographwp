@@ -132,7 +132,8 @@ include_once get_template_directory().'/inc/vgraph-nav-walker.php';
 //include customizer API
 include_once get_template_directory() . '/inc/customizer/customizer.php';
 
-
+//team repeater Control
+require_once get_template_directory() . '/inc/customizer/team/team-repeater-control.php';
 
 
 

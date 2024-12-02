@@ -299,22 +299,40 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
+
+                <?php
+                
+                    $team_data = get_theme_mod('team_repeater_setting', '[]');
+                    $team_members = json_decode($team_data, true);
+
+                ?>
+
+                
+                <?php if( ! empty($team_members) ): ?>
+                 
+                <?php foreach( $team_members as $team ): ?>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="team__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-1.jpg">
                         <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
+                            <h4><?php echo esc_attr($team['name']); ?></h4>
+                            <p><?php echo esc_html($team['designation']); ?></p>
                             <div class="team__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="<?php echo esc_url($team['facebook']); ?>"><i class="fa fa-facebook"></i></a>
+                                <a href="<?php echo esc_url($team['twitter']); ?>"><i class="fa fa-twitter"></i></a>
+                                <a href="<?php echo esc_url($team['dribbble']); ?>"><i class="fa fa-dribbble"></i></a>
+                                <a href="<?php echo esc_url($team['instagram']) ?>"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                <?php endforeach; ?>
+
+                <?php endif; ?>
+
+
+                <!-- <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="team__item team__item--second set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-2.jpg">
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
@@ -342,6 +360,8 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="team__item team__item--four set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-4.jpg">
                         <div class="team__item__text">
@@ -355,7 +375,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
                 <div class="col-lg-12 p-0">
                     <div class="team__btn">
                         <a href="#" class="primary-btn">Meet Our Team</a>

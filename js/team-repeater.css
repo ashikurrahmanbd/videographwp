@@ -1,0 +1,20 @@
+.team-repeater-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.team-repeater-item {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.team-repeater-item input {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
