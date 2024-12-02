@@ -1,6 +1,9 @@
 /*---------------------
   Footer
 -----------------------*/
+
+@use "variable";
+
 .footer {
   background: #0a0119;
 }
@@ -24,7 +27,7 @@
   a {
     display: inline-block;
     font-size: 15px;
-    color: $white-color;
+    color: variable.$white-color;
     height: 40px;
     width: 40px;
     background: rgba(255, 255, 255, 0.1);
@@ -48,7 +51,7 @@
   margin-bottom: 35px;
 
   h5 {
-    color: $white-color;
+    color: variable.$white-color;
     font-weight: 700;
     margin-bottom: 35px;
   }
@@ -60,11 +63,11 @@
 
   .read__more {
       font-size: 16px;
-      color: $white-color;
+      color: variable.$white-color;
 
       span {
           font-size: 16px;
-          color: $white-color;
+          color: variable.$white-color;
           opacity: .5;
           position: relative;
           top: 4px;
@@ -105,11 +108,11 @@
 
     button {
       font-size: 20px;
-      color: $white-color;
+      color: variable.$white-color;
       border: none;
       height: 50px;
       width: 50px;
-      background: $primary-color;
+      background: variable.$primary-color;
       line-height: 50px;
       text-align: center;
       position: absolute;
@@ -129,10 +132,10 @@
   font-weight: 300;
 
   i {
-    color: $primary-color;
+    color: variable.$primary-color;
   }
 
   a {
-    color: $primary-color;
+    color: variable.$primary-color;
   }
 }

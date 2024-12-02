@@ -255,11 +255,12 @@ class vgraph_nav_walker extends Walker {
 		 */
 		$title = apply_filters( 'nav_menu_item_title', $title, $menu_item, $args, $depth );
 
-		$item_output  = $args->before;
+		$item_output = isset($args->before) ? $args->before : '';
 		$item_output .= '<a' . $attributes . '>';
-		$item_output .= $args->link_before . $title . $args->link_after;
+		$item_output .= (isset($args->link_before) ? $args->link_before : '') . $title . (isset($args->link_after) ? $args->link_after : '');
 		$item_output .= '</a>';
-		$item_output .= $args->after;
+		$item_output .= isset($args->after) ? $args->after : '';
+
 
 		/**
 		 * Filters a menu item's starting output.

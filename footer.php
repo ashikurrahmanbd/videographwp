@@ -57,7 +57,9 @@
                     </div>
 
                     <div class="col-lg-4 col-md-12">
+
                         <?php dynamic_sidebar( 'footer-widget-four' ); ?>
+                        
                     </div>
                 </div>
             </div>

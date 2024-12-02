@@ -1,6 +1,9 @@
 /*---------------------
   Breadcrumb
 -----------------------*/
+
+@use "variable";
+
 .breadcrumb-option {
     padding-top: 180px;
 }
@@ -8,7 +11,7 @@
 .breadcrumb__text {
 
     h2 {
-        color: $white-color;
+        color: variable.$white-color;
         font-size: 50px;
         font-weight: 700;
         margin-bottom: 12px;
@@ -19,7 +22,7 @@
 
     a {
         font-size: 16px;
-        color: $white-color;
+        color: variable.$white-color;
         font-weight: 300;
         display: inline-block;
         margin-right: 32px;

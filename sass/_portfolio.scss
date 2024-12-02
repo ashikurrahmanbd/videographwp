@@ -1,6 +1,10 @@
 /*---------------------
   Portfolio
 -----------------------*/
+
+@use "variable";
+@use "mixins";
+
 .portfolio {
   background: #100028;
 }
@@ -19,7 +23,7 @@
     padding: 6px 22px;
     
     &.active {
-      border: 1px solid $primary-color;
+      border: 1px solid variable.$primary-color;
     }
 
     &:last-child {
@@ -54,7 +58,7 @@
 
   .play-btn {
     display: inline-block;
-    color: $white-color;
+    color: variable.$white-color;
     font-size: 20px;
     height: 50px;
     width: 50px;
@@ -69,7 +73,7 @@
   text-align: center;
 
   h4 {
-    color: $white-color;
+    color: variable.$white-color;
     display: inline-block;
     font-size: 22px;
     font-weight: 700;
@@ -84,7 +88,7 @@
       width: 100%;
       background: #333;
       content: "";
-      @include transition(all, .3s);
+      @include mixins.transition(all, .3s);
       opacity: 0;
     }
   }
@@ -135,7 +139,7 @@
 
   .arrow__pagination {
     font-size: 15px;
-    color: $white-color;
+    color: variable.$white-color;
     display: inline-block;
     text-transform: uppercase;
 
@@ -154,7 +158,7 @@
 
   .number__pagination {
     font-size: 18px;
-    color: $white-color;
+    color: variable.$white-color;
     height: 50px;
     width: 50px;
     background: rgba(242, 242, 242, 0.1);

@@ -1,6 +1,9 @@
 /*---------------------
     Blog
 -----------------------*/
+
+@use "variable";
+
 .blog {
     background: #100028;
 }
@@ -20,17 +23,17 @@
         ul {
 
             li {
-                color: $white-color;
+                color: variable.$white-color;
             }
         }
 
         p {
-            color: $white-color;
+            color: variable.$white-color;
         }
     }
 
     h4 {
-        color: $white-color;
+        color: variable.$white-color;
         font-weight: 700;
         line-height: 31px;
         margin-bottom: 18px;
@@ -73,11 +76,11 @@
 
     a {
         font-size: 16px;
-        color: $white-color;
+        color: variable.$white-color;
 
         span {
             font-size: 16px;
-            color: $white-color;
+            color: variable.$white-color;
             opacity: .5;
             position: relative;
             top: 4px;

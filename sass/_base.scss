@@ -28,6 +28,12 @@ Created: Colorib
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
+
+@use "variable";
+
+@use "mixins";
+
+
 html,
 body {
   height: 100%;
@@ -124,7 +130,7 @@ ol {
   }
 
   span {
-    color: $white-color;
+    color: variable.$white-color;
     display: block;
     font-size: 16px;
     letter-spacing: 2px;
@@ -133,7 +139,7 @@ ol {
   }
 
   h2 {
-    color: $white-color;
+    color: variable.$white-color;
     font-weight: 700;
     text-transform: uppercase;
     position: relative;
@@ -145,7 +151,7 @@ ol {
       bottom: 0;
       height: 5px;
       width: 70px;
-      background: $primary-color;
+      background: variable.$primary-color;
       content: "";
     }
   }
@@ -177,12 +183,13 @@ ol {
 
 /* buttons */
 .primary-btn {
+
   display: inline-block;
   font-size: 15px;
   font-family: 'Play', sans-serif;
   font-weight: 700;
   padding: 14px 32px 12px;
-  color: $white-color;
+  color: variable.$white-color;
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
@@ -207,11 +214,11 @@ ol {
     top: 0;
     height: 30px;
     width: 30px;
-    border-left: 2px solid $primary-color;
-    border-top: 2px solid $primary-color;
+    border-left: 2px solid variable.$primary-color;
+    border-top: 2px solid variable.$primary-color;
     content: "";
     z-index: -1;
-    @include transition(all, .7s);
+    @include mixins.transition(all, .7s);
   }
 
   &:after {
@@ -220,18 +227,18 @@ ol {
     bottom: 0;
     height: 30px;
     width: 30px;
-    border-right: 2px solid $primary-color;
-    border-bottom: 2px solid $primary-color;
+    border-right: 2px solid variable.$primary-color;
+    border-bottom: 2px solid variable.$primary-color;
     content: "";
     z-index: -1;
-    @include transition(all, .7s);
+    @include mixins.transition(all, .7s);
   }
 }
 
 .site-btn {
   font-size: 15px;
-  color: $white-color;
-  background: $primary-color;
+  color: variable.$white-color;
+  background: variable.$primary-color;
   font-family: 'Play', sans-serif;
   font-weight: 700;
   border: none;
@@ -267,6 +274,7 @@ ol {
 }
 
 @keyframes loader {
+
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -287,6 +295,7 @@ ol {
     border: 4px solid #f44336;
     border-left-color: transparent;
   }
+
 }
 
 @-webkit-keyframes loader {

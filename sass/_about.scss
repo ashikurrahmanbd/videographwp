@@ -1,3 +1,5 @@
+@use "variable";
+
 /*---------------------
   About
 -----------------------*/
@@ -64,7 +66,7 @@
         margin-right: 10px;
 
         &.active {
-          background: $primary-color;
+          background: variable.$primary-color;
         }
 
         &:last-child {
@@ -83,7 +85,7 @@
   z-index: 9;
 
   P {
-    color: $white-color;
+    color: variable.$white-color;
     font-size: 18px;
     font-weight: 300;
     font-style: italic;
@@ -111,13 +113,13 @@
   overflow: hidden;
 
   h5 {
-    color: $white-color;
+    color: variable.$white-color;
     font-weight: 700;
     margin-bottom: 8px;
   }
 
   span {
-    color: $white-color;
+    color: variable.$white-color;
     font-size: 14px;
     font-weight: 300px;
     display: inline-block;
