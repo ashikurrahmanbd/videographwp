@@ -54,18 +54,56 @@
     <!-- Hero Section End -->
 
     <!-- Services Section Begin -->
+
+        <!-- all dynamic contents from customizer -->
+        <?php 
+            
+            //section title subtitle
+            $ss_subtitle = get_theme_mod( 'service_section_subtitle', 'Our Servicess' );
+            $ss_title = get_theme_mod( 'service_section_title', 'What We Doo' );
+            $ss_description = get_theme_mod( 'service_section_description', 'If you hire a videographer of our team you will get a video professional to make a custom video for your business and, once the project is over.' );
+
+            //cta 
+            $ss_cta_link_text = get_theme_mod( 'service_section_cta_link_text', 'View All Services' );
+            $ss_cta_link = get_theme_mod( 'service_section_cta_link', '#' );
+
+            //services title, description
+            $ss_s1_title = get_theme_mod( 'service_section_service_one_title', 'Motion graphics' );
+
+            $ss_s1_description = get_theme_mod( 'service_section_service_one_description', 'Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.' );
+
+            //service 2
+            $ss_s2_title = get_theme_mod( 'service_section_service_two_title', 'Scriptwriting and editing' );
+
+            $ss_s2_description = get_theme_mod( 'service_section_service_two_description', 'Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.' );
+
+            //service 3
+            $ss_s3_title = get_theme_mod( 'service_section_service_three_title', 'Video distribution' );
+
+            $ss_s3_description = get_theme_mod( 'service_section_service_three_description', 'Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.' );
+
+            //service 4
+            $ss_s4_title = get_theme_mod( 'service_section_service_four_title', 'Video hosting' );
+
+            $ss_s4_description = get_theme_mod( 'service_section_service_four_description', 'Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.' );
+
+
+
+        ?>
+        <!-- end of all dynamic content from customizer -->
     <section class="services spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="services__title">
                         <div class="section-title">
-                            <span>Our services</span>
-                            <h2>What We do?</h2>
+                            <span><?php echo esc_attr_e( $ss_subtitle, 'videograph' ); ?></span>
+                            <h2><?php echo esc_attr_e( $ss_title, 'videograph' ); ?></h2>
                         </div>
-                        <p>If you hire a videographer of our team you will get a video professional to make a custom
-                            video for your business and, once the project is over.</p>
-                        <a href="#" class="primary-btn">View all services</a>
+                        <p>
+                            <?php echo esc_html__( $ss_description, 'videograph' ); ?>
+                        </p>
+                        <a href="<?php echo esc_url( $ss_cta_link ); ?>" class="primary-btn"><?php echo esc_attr_e( $ss_cta_link_text, 'videograph' ); ?></a>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -75,9 +113,12 @@
                                 <div class="services__item__icon">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/icons/si-1.png" alt="">
                                 </div>
-                                <h4>Motion graphics</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4><?php echo esc_attr__( $ss_s1_title, 'videograph' ); ?></h4>
+                                <p>
+                                    <?php
+                                        echo esc_html__( $ss_s1_description, 'videograph' );
+                                    ?>
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -85,9 +126,12 @@
                                 <div class="services__item__icon">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/icons/si-2.png" alt="">
                                 </div>
-                                <h4>Scriptwriting and editing</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4><?php echo esc_attr__( $ss_s2_title, 'videograph' ); ?></h4>
+                                <p>
+                                    <?php 
+                                        echo esc_html__( $ss_s2_description, 'videograph' );
+                                    ?>
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -95,9 +139,10 @@
                                 <div class="services__item__icon">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/icons/si-3.png" alt="">
                                 </div>
-                                <h4>Video distribution</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4><?php echo esc_attr__( $ss_s3_title, 'videograph' ) ?></h4>
+                                <p>
+                                    <?php echo esc_html__( $ss_s3_description, 'videograph' ); ?>
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -105,9 +150,10 @@
                                 <div class="services__item__icon">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/icons/si-4.png" alt="">
                                 </div>
-                                <h4>Video hosting</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4><?php echo esc_attr__( $ss_s4_title, 'videograph' ); ?></h4>
+                                <p>
+                                    <?php echo esc_html__( $ss_s4_description, 'videograph'); ?>
+                                </p>
                             </div>
                         </div>
                     </div>

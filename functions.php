@@ -78,7 +78,7 @@ function vgraph_common_features(){
         'after_widget'  => '</div>',
         'before_title'  => '<h5>',
         'after_title'   => '</h5>'
-        
+
     ) );
 
 
@@ -127,5 +127,10 @@ add_action('wp_enqueue_scripts', 'vgraph_theme_style_n_script');
 // Include files
 include_once get_template_directory().'/inc/vgraph-nav-walker.php';
 
-include_once get_template_directory().'/inc/vgraph-customizer-api.php';
+// include_once get_template_directory().'/inc/vgraph-customizer-api.php';
+
+//include customizer API
+include_once get_template_directory() . '/inc/customizer/customizer.php';
+
+
 

@@ -2088,4 +2088,21 @@ ol {
   margin-top: 16px;
 }
 
+.repeater-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repeater-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.repeater-input {
+  flex: 1;
+}
+
 /*# sourceMappingURL=style.css.map */
