@@ -1,5 +1,35 @@
 (function ($) {
     $(document).ready(function () {
+        const controlId = 'team_repeater_setting';
+
+        // Load existing data on initialization
+        wp.customize(controlId, function (value) {
+            value.bind(function (newValue) {
+                // Parse the saved JSON
+                const data = JSON.parse(newValue || '[]');
+                const $list = $('.team-repeater-list');
+                $list.empty(); // Clear existing items
+
+                // Populate the list with saved data
+                data.forEach((item, index) => {
+                    const newItem = `
+                        <li class="team-repeater-item">
+                            <h3>Team #${index + 1}</h3>
+                            <input type="text" class="team-name" value="${item.name || ''}" placeholder="Name" />
+                            <input type="text" class="team-designation" value="${item.designation || ''}" placeholder="Designation" />
+                            <input type="text" class="team-image" value="${item.image || ''}" placeholder="Image URL" />
+                            <input type="text" class="team-facebook" value="${item.facebook || ''}" placeholder="Facebook URL" />
+                            <input type="text" class="team-twitter" value="${item.twitter || ''}" placeholder="Twitter URL" />
+                            <input type="text" class="team-instagram" value="${item.instagram || ''}" placeholder="Instagram URL" />
+                            <input type="text" class="team-dribbble" value="${item.dribbble || ''}" placeholder="Dribbble URL" />
+                            <button type="button" class="button remove-team-member">Remove</button>
+                        </li>
+                    `;
+                    $list.append(newItem);
+                });
+            });
+        });
+
         // Add Team Member
         $(document).on('click', '.add-team-member', function () {
             let $list = $(this).siblings('.team-repeater-list');
@@ -40,7 +70,7 @@
                 };
                 data.push(item);
             });
-            wp.customize('team_repeater_setting').set(JSON.stringify(data));
+            wp.customize(controlId).set(JSON.stringify(data));
         });
     });
 })(jQuery);

@@ -307,14 +307,35 @@
                     $team_data = get_theme_mod('team_repeater_setting', '[]');
                     $team_members = json_decode($team_data, true);
 
+                    $team_cta_text = get_theme_mod('team_section_cta_title', 'Meet Our Team');
+                    $team_cta_link = get_theme_mod('team_section_cta_link', '#');
+
                 ?>
 
                 
-                <?php if( ! empty($team_members) ): ?>
+                <?php if( ! empty($team_members) ): $i = 0; ?>
                  
-                <?php foreach( $team_members as $team ): ?>
+                <?php 
+                    $item_class = '';
+                    foreach( $team_members as $team ): 
+                        $i++;
+                        
+                        if( $i == 2 ){
+                            $item_class = 'team__item--second';
+                        }
+                        if( $i == 3 ){
+                            $item_class = 'team__item--third';
+                        }
+
+                        if( $i == 4 ){
+                            $item_class = 'team__item--four';
+                        }
+                        
+                       
+                ?>
+
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-1.jpg">
+                    <div class="team__item set-bg <?php echo $item_class; ?>" data-setbg="<?php echo esc_url($team['image']); ?>">
                         <div class="team__item__text">
                             <h4><?php echo esc_attr($team['name']); ?></h4>
                             <p><?php echo esc_html($team['designation']); ?></p>
@@ -331,56 +352,13 @@
 
                 <?php endif; ?>
 
-
-                <!-- <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--second set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-2.jpg">
-                        <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
-                            <div class="team__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--third set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-3.jpg">
-                        <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
-                            <div class="team__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--four set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/team/team-4.jpg">
-                        <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
-                            <div class="team__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
                 <div class="col-lg-12 p-0">
                     <div class="team__btn">
-                        <a href="#" class="primary-btn">Meet Our Team</a>
+                        <?php if ( ! empty($team_cta_text) ) : ?>
+
+                        <a href="<?php echo esc_url($team_cta_link); ?>" class="primary-btn"> <?php echo esc_attr__( $team_cta_text, 'videograph' ); ?> </a>
+                        
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
