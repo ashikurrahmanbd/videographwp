@@ -88,7 +88,6 @@
             $ss_s4_description = get_theme_mod( 'service_section_service_four_description', 'Whether you’re halfway through the editing process, or you haven’t even started, our post production services can put the finishing touches.' );
 
 
-
         ?>
         <!-- end of all dynamic content from customizer -->
     <section class="services spad">
@@ -221,6 +220,28 @@
     <!-- Work Section End -->
 
     <!-- Counter Section Begin -->
+        <!-- section all the dynamic content -->
+
+        <?php
+
+            $stats_one_title = get_theme_mod( 'statistics_one_title', '230' );
+            $stats_one_subtitle = get_theme_mod( 'statistics_one_subtitle', 'Completed Projects' );
+
+            $stats_two_title = get_theme_mod( 'statistics_two_title', '1070' );
+            $stats_two_subtitle = get_theme_mod( 'statistics_two_subtitle', 'happy Clients' );
+
+
+            $stats_three_title = get_theme_mod( 'statistics_three_title', '230' );
+            $stats_three_subtitle = get_theme_mod( 'statistics_three_subtitle', 'Perspecti Clients' );
+
+            $stats_four_title = get_theme_mod( 'statistics_four_title', '230' );
+            $stats_four_subtitle = get_theme_mod( 'statistics_four_subtitle', 'Completed Projects' );
+
+
+
+        ?>
+
+        <!-- end of section all the dynamic content -->
     <section class="counter">
         <div class="container">
             <div class="counter__content">
@@ -229,8 +250,8 @@
                         <div class="counter__item">
                             <div class="counter__item__text">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-1.png" alt="">
-                                <h2 class="counter_num">230</h2>
-                                <p>Compled Projects</p>
+                                <h2 class="counter_num"><?php echo esc_attr__( $stats_one_title, 'videograph' ); ?></h2>
+                                <p><?php echo esc_attr__( $stats_one_subtitle, 'videograph' ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -238,8 +259,8 @@
                         <div class="counter__item second__item">
                             <div class="counter__item__text">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-2.png" alt="">
-                                <h2 class="counter_num">1068</h2>
-                                <p>Happy clients</p>
+                                <h2 class="counter_num"><?php echo esc_attr__( $stats_two_title, 'videograph' ); ?></h2>
+                                <p><?php echo esc_attr__( $stats_two_subtitle, 'videograph' ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -247,8 +268,8 @@
                         <div class="counter__item third__item">
                             <div class="counter__item__text">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-3.png" alt="">
-                                <h2 class="counter_num">230</h2>
-                                <p>Perspective clients</p>
+                                <h2 class="counter_num"><?php echo esc_attr__( $stats_three_title, 'videograph' ); ?></h2>
+                                <p><?php echo esc_attr__( $stats_three_subtitle, 'videograph' ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -256,8 +277,8 @@
                         <div class="counter__item four__item">
                             <div class="counter__item__text">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/icons/ci-4.png" alt="">
-                                <h2 class="counter_num">230</h2>
-                                <p>Compled Projects</p>
+                                <h2 class="counter_num"><?php echo esc_attr__( $stats_four_title, 'videograph' ); ?></h2>
+                                <p><?php echo esc_attr__( $stats_four_subtitle, 'videograph' ); ?></p>
                             </div>
                         </div>
                     </div>
