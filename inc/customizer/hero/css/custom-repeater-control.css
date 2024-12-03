@@ -1,0 +1,22 @@
+.hero-repeater-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+.hero-repeater-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.hero-repeater-item input {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.hero-repeater-item .button {
+    display: inline-block;
+    margin-top: 5px;
+}

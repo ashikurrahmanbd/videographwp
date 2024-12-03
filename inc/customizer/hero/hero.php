@@ -27,3 +27,29 @@ $wp_customize->add_control('hero_subtitle', array(
     'settings' => 'hero_subtitle',
     'type'     => 'text',
 ));
+
+//hero slider repater setting
+
+//hero repeater control
+require_once get_template_directory() . '/inc/customizer/hero/hero-custom-repeater-control.php';
+
+
+$wp_customize->add_setting(
+    'hero_section',
+    array(
+        'default'           => '',
+        'sanitize_callback' => 'wp_kses_post',
+    )
+);
+
+$wp_customize->add_control(
+    new Hero_Repeater_Control(
+        $wp_customize,
+        'hero_section',
+        array(
+            'label'       => __( 'Slider', 'mytheme' ),
+            'section'     => 'vgraph_hero',
+            'settings'    => 'hero_section',
+        )
+    )
+);

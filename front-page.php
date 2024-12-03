@@ -10,19 +10,41 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/hero/hero-1.jpg">
+
+            <?php 
+
+                $hero_section_data = get_theme_mod('hero_section', '');
+                $hero_section_data = !empty($hero_section_data) ? json_decode($hero_section_data, true) : [];
+
+
+            
+            ?>
+            <?php if( ! empty($hero_section_data) ): ?>
+            <?php foreach($hero_section_data as $hero_item): ?>
+            <?
+                $hero_image = esc_url($hero_item['hero_image'] ?? '');
+                $hero_heading = esc_html($hero_item['hero_heading'] ?? '');
+                $hero_subheading = esc_html($hero_item['hero_subheading'] ?? '');
+                $hero_cta_text = esc_html($hero_item['hero_cta_text'] ?? '');
+                $hero_cta_link = esc_url($hero_item['hero_cta_link'] ?? ''); 
+            ?>
+            <div class="hero__item set-bg" data-setbg="<?php echo esc_url( $hero_image );  ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span>For website and video editing</span>
-                                <h2>Videographer’s Portfolio</h2>
-                                <a href="#" class="primary-btn">See more about us</a>
+                                <span><?php echo esc_attr__( $hero_subheading, 'videograph' ); ?></span>
+                                <h2><?php echo esc_attr__( $hero_heading, 'videograph' );  ?></h2>
+                                <a href="<?php echo esc_url( $hero_cta_link, 'videograph' ) ?>" class="primary-btn"><? echo esc_attr__( $hero_cta_text, 'videograph' ); ?></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php endforeach; ?>
+            <?php else: ?>
+
+
             <div class="hero__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/hero/hero2.jpg">
                 <div class="container">
                     <div class="row">
@@ -36,6 +58,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="hero__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/hero/hero3.jpg">
                 <div class="container">
                     <div class="row">
@@ -49,6 +73,9 @@
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
+
+
         </div>
     </section>
     <!-- Hero Section End -->
@@ -367,102 +394,75 @@
     <!-- Team Section End -->
 
     <!-- Latest Blog Section Begin -->
+        <!-- Dynamic customizer Data -->
+        <?php
+
+            $blog_section_subtitle = get_theme_mod( 'blog_section_subtitle', 'Our Blog' );
+            $blog_section_title = get_theme_mod( 'blog_section_title', 'Blog Updated' );
+            $post_to_show_count =  get_theme_mod( 'blog_post_count', 5 );
+
+        ?>
+        <!-- end of Dynamic Data -->
     <section class="latest spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title center-title">
-                        <span>Our Blog</span>
-                        <h2>Blog Update</h2>
+                        <span><?php echo esc_attr__( $blog_section_subtitle, 'videograph' );  ?></span>
+                        <h2><?php echo esc_attr__( $blog_section_title, 'videograph' ); ?></h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="latest__slider owl-carousel">
+                    <?php
+
+                        $wp_lastest_post = new WP_Query(
+
+                            array(
+                                'post_type' => 'post',
+                                'posts_per_page'     => $post_to_show_count,
+                                
+                            )
+
+                        );
+
+                        
+
+                    ?>
+                    <?php if($wp_lastest_post->have_posts(  )) : ?>
+                    
+                    <?php while($wp_lastest_post->have_posts()) : $wp_lastest_post->the_post(); ?>
                     <div class="col-lg-4">
                         <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
+                            <h4><?php the_title(); ?></h4>
                             <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
+                                <li><?php the_time( 'M d, Y' ); ?></li>
+
+                                <?php 
+                                    $comments_count = get_comments_number();
+                                ?>
+                                <?php if($comments_count === 0): ?>
+                                    <li>No Comments</li>
+                                <?php elseif( $comments_count === 1 ): ?>
+                                    <li>1 Comment</li>
+                                <?php else: ?>
+                                    <li><?php echo $comments_count; ?> Comments</li>
+                                <?php endif; ?>
+                                
+                                
                             </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
+                            <?php the_content(); ?>
+                            <a href="<?php the_permalink(); ?>">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>Bumper Ads: How to Tell a Story in 6 Seconds</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>Bumper Ads: How to Tell a Story in 6 Seconds</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
+                    <?php endwhile; wp_reset_postdata(); ?>
+                    <?php endif; ?>
+
+                    
+
+                    
+
                 </div>
             </div>
         </div>
@@ -470,14 +470,31 @@
     <!-- Latest Blog Section End -->
 
     <!-- Call To Action Section Begin -->
-    <section class="callto spad set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/callto-bg.jpg">
+        <!-- Dyanmic values from customizer -->
+        <?php
+            
+            $cta_default_bg = get_template_directory_uri() . '/img/callto-bg.jpg';
+
+            $cta_section_bg = get_theme_mod( 'cta_section_bg', $cta_default_bg );
+
+            $cta_subtitle = get_theme_mod( 'cta_section_subtitle', 'INC5000, Best places to work 2019' );
+
+            $cta_title = get_theme_mod( 'cta_section_title', 'Fresh Ideas, Fresh Moments Giving Wings to your Stories.' );
+
+            $cta_button_text = get_theme_mod( 'cta_button_text', 'Start Your Stories' );
+
+            $cta_button_link = get_theme_mod( 'cta_button_link', '#' );
+
+        ?>
+        <!-- End of Dynamic values from Customizer -->
+    <section class="callto spad set-bg" data-setbg="<?php echo esc_url_raw( $cta_section_bg ); ?>">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="callto__text">
-                        <h2>Fresh Ideas, Fresh Moments Giving Wings to your Stories.</h2>
-                        <p>INC5000, Best places to work 2019</p>
-                        <a href="#">Start your stories</a>
+                        <h2><?php echo esc_attr__( $cta_title, 'videograph' ); ?></h2>
+                        <p><?php echo esc_attr__( $cta_subtitle, 'videograph' ); ?></p>
+                        <a href="<?php echo esc_url( $cta_button_link ); ?>"><?php echo esc_attr__( $cta_button_text, 'videograph' ); ?></a>
                     </div>
                 </div>
             </div>

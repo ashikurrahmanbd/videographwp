@@ -10,7 +10,7 @@ $wp_customize->add_setting('team_section_subtitle', array(
 $wp_customize->add_control('team_section_subtitle', array(
     'label'    => __('Section Subtitle', 'videograph'),
     'section'  => 'vgraph_teams',
-    'settings' => 'service_section_subtitle',
+    'settings' => 'team_section_subtitle',
     'type'     => 'text',
 ));
 

@@ -172,6 +172,63 @@ function vgraph_custozier_api($wp_customize){
     /**
      * End of Services Section Settings and Controls
     */
+
+
+
+
     
+    /**
+     * Blog Section 
+    */
+    $wp_customize->add_section(
+
+        'vgraph_blogs',
+        [
+            'title'                 => __('Blogs', 'videograph'),
+            'description'           => __('Blogs Section Customization', 'videograph'),
+            'priority'              => 10,
+            'panel'                 => 'vgraph_customization'
+        ]
+
+    );
+
+    /**
+     * Work Statistics Section Settings and Controls
+    */
+
+    // Include work statistics Customizer Settings from separate file
+    include get_template_directory() . '/inc/customizer/blog/blog.php';
+
+    /**
+     * End of Services Section Settings and Controls
+    */
+    
+
+    
+    /**
+     * CTA Section 
+    */
+    $wp_customize->add_section(
+
+        'vgraph_cta',
+        [
+            'title'                 => __('CTA', 'videograph'),
+            'description'           => __('CTA Section Customization', 'videograph'),
+            'priority'              => 10,
+            'panel'                 => 'vgraph_customization'
+        ]
+
+    );
+
+    /**
+     * Work Statistics Section Settings and Controls
+    */
+
+    // Include work statistics Customizer Settings from separate file
+    include get_template_directory() . '/inc/customizer/cta/cta.php';
+
+    /**
+     * End of Services Section Settings and Controls
+    */
 
 }
