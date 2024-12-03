@@ -191,58 +191,48 @@
 
     <!-- Work Section Begin -->
     <section class="work">
+
         <div class="work__gallery">
             <div class="grid-sizer"></div>
-            <div class="work__item wide__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/work/work-1.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-                <div class="work__item__hover">
-                    <h4>VIP Auto Tires & Service</h4>
-                    <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
-                    </ul>
+            <?php
+
+                $portfolio_items = get_theme_mod('portfolio_gallery', ''); 
+                $portfolio_items = !empty($portfolio_items) ? json_decode($portfolio_items, true) : [];
+
+                if (!empty($portfolio_items)) : ?>
+                <div class="portfolio-gallery">
+                    <?php foreach ($portfolio_items as $item) : 
+                        $type = esc_attr($item['type']);
+                        $thumbnail = esc_url($item['thumbnail']);
+                        $video = esc_url($item['video']);
+                        $heading = esc_html($item['heading'] ?? '');
+                        $categories = esc_html($item['categories'] ?? '');
+                    ?>
+                        <div class="work__item <?php echo $type === 'wide' ? 'wide__item' : 'small__item'; ?> set-bg" data-setbg="<?php echo $thumbnail; ?>">
+                            <a href="<?php echo $video; ?>" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                            
+                            <?php if ($type === 'wide') : ?>
+                                <div class="work__item__hover">
+                                    <h4><?php echo $heading; ?></h4>
+                                    <ul>
+                                        <?php 
+                                        // Split categories by comma and display them as list items
+                                        $categories_arr = explode(',', $categories);
+                                        foreach ($categories_arr as $category) : ?>
+                                            <li><?php echo trim($category); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-            </div>
-            <div class="work__item small__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/work/work-2.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-            </div>
-            <div class="work__item small__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/work/work-3.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-            </div>
-            <div class="work__item large__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/work/work-4.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-                <div class="work__item__hover">
-                    <h4>VIP Auto Tires & Service</h4>
-                    <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="work__item small__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/work/work-5.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-            </div>
-            <div class="work__item small__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/work/work-6.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-            </div>
-            <div class="work__item wide__item set-bg" data-setbg="<?php echo get_template_directory_uri(); ?>/img/work/work-7.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-                <div class="work__item__hover">
-                    <h4>VIP Auto Tires & Service</h4>
-                    <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
-                    </ul>
-                </div>
-            </div>
+            <?php endif; ?>
+
+
         </div>
+
+
     </section>
     <!-- Work Section End -->
 
